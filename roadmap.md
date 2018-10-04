@@ -17,17 +17,17 @@ New dependencies include:
 ## <a href="0.2.0"></a>
 ## 0.2.0
 
-0.2.0 adds the ability to read and write partial contents, respecting 'bytes=' headers, as well as a feature to set inotify watches on files and directories in order to stream updates over a persistent connection (with a keepalive heartbeat). This improves support for streaming video and downloaded new bytes off large log files (to emulate [tail --follow](http://man7.org/linux/man-pages/man1/tail.1.html), requesting new bytes when notified of file change). It also lays the groundwork for live updates to chat and filesharing interfaces in future versions.
+0.2.0 adds the ability to read and write partial contents, respecting 'bytes=' headers, as well as a feature to set inotify watches on files and directories in order to stream updates over a persistent connection (with a keepalive heartbeat). This improves support for streaming video and downloading new bytes off large log files (to emulate [tail --follow](http://man7.org/linux/man-pages/man1/tail.1.html), requesting new bytes when notified of file change). It also lays the groundwork for live updates to chat and filesharing interfaces in future versions.
 
 New dependencies include:
 - ContextFeed
-- WriteRange
-- BytePipette
+- PipetteReader
+- PipetteWriter
 
 ## <a href="0.3.0"></a>
 ## 0.3.0
 
-0.3.0 will be the first version to include a method of writing a GUI to the client's browser. I'll have to decide what example interfaces to load here, but a file library and media player are top priorities. Drag and drop files to your server, get a link to share it either direct or through the current interface.
+0.3.0 will be the first version to include a method of writing a GUI to the client's browser. I'll have to decide what example interfaces to load here, but a file library and media player are top priorities. Drag and drop files to your server, get a link to share it either direct or through the current interface. htmlx.json, style.css, and class.js files will be packaged and streamed as a separate, cacheable bundle.js file, after sending a basic html landing page with links to source files in order to navigate content on platforms without modern javascript support (an all or nothing strategy: either you have a fast connection and a modern browser, or else you get a basic site map that lets you at least get to the content.)
 
 New dependencies include:
 - FigjamFeed
@@ -40,7 +40,7 @@ New dependencies include:
 
 0.4.0 brings self-editing functionality and the use-case of prototyping programs in any language for remote execution. Every component can open an editor to inspect, customize, or extend the source code. CodeMirror will include its own vim-key bindings and all the syntax themes. A CodeMirror will be able to watch the source for updates to be notified if file changes on disk before overwriting. Being able to take advantage of git diffs and merge operations is a long way away, but plausible.
 
-TeleFork will open a ContextFeed on the output of an executable so you can watch results live and immediately move program output into other contexts. Error output and info on the executable (git hash, sha hash) are included in the output files: stdin.txt, stdout.txt, stderr.txt, exit.txt, fork.json, and if the executable doesn't launch at all: error.json. This allows you to immediately grab the PID of a launched process and share the output with others before the program exits.
+TeleFork will open a ContextFeed on the output of an executable so you can watch results live and immediately move program output into other contexts. Error output and info on the executable (git hash, sha hash) are included in the output files: stdin.txt, stdout.txt, stderr.txt, exit.txt, fork.json, and if the executable doesn't launch at all: error.json. This allows you to immediately grab the PID of a launched process and share the output with others even before the program exits.
 
 Alternately, a terminal-emulator-like-interface is provided to interact with programs in a more traditional style.
 
@@ -69,8 +69,7 @@ Halfway there! 0.5.0 serves as a blog platform with media sharing and chat. Incl
 ## <a href="0.7.0"></a>
 ## 0.7.0
 
-With the basic functionality established, 0.7.0 turns toward the sysadmin side of things, adding an API for creating identities and adding them to groups.
-
+With the basic functionality established, 0.7.0 turns toward the sysadmin side of things, adding an API for creating identities and adding them to groups, getting authentication URLs (magic links) to be distributed to the invitees, and an observer stream that logs every request and what identity made it. First version will be flat log files, in the future SQL entries or ideally a timeseries database will ingest these logs at high resolution (timecoded chunks of bytes to give a live view of all traffic on the system.)
 
 - Keymaker
 - Operator
@@ -131,6 +130,6 @@ Once you've created a 'block and tackle' dataflow, you can mount the whole thing
 ## <a href="3.0.0"></a>
 ## 3.0.0: Gumball Machine
 
-The Gumball Machine is the ultimate server configuration and deployment tool. It provides an interface for pointing domain names at IP addresses (internal or external) and a configuration file for booting an application -- the kicker is that you can unmount the application and export the entire state of the server (user files, customizations, etc) as a gzipped tarball (which I'm renaming gumball) ready to be uncomressed and rebooted on a Gumball machine hosted by a different provider, whether that's in the cloud, or down the street.
+The Gumball Machine is the ultimate server configuration and deployment tool. It provides an interface for pointing domain names at IP addresses (internal or external) and a configuration file for booting an application -- the kicker is that you can unmount the application and export the entire state of the server (user files, customizations, etc) as a gzipped tarball (which I'm renaming gumball) ready to be uncompressed and rebooted on a Gumball machine hosted by a different provider, whether that's in the cloud, or down the street.
 
 This will allow sysadmins and vhosts the world over to compete in a marketplace of web applications where the cost of changing ownership approaches 0. If you're unhappy with management, you can take your gumball and go play somewhere else. If a Big 3 cloud provider deletes your account and doesn't answer the phone, you can buy your own machine and pick up where you left off.

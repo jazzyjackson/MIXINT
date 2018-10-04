@@ -1,9 +1,9 @@
 # MIXINT
-## ReMIXable INTerface for data subscription, archival, and conversation
+## Mixable Interface: Transparent Timeshares for Trusted Parties
 
-MIXINT is a free (as in freedom) server and web application allowing owners, groups, and the world to publish and subscribe to each other's file directories. Calendar events, chat messages, RSS subscriptions, and documents are organized in plain text formats on a shared file system controlled by you (or your friendly neighborhood sysdamin). JSON and markdown files can be presented by custom elements or linked to directly. The stylesheets and source code to any component of the workspace is only a few clicks away, so MIXINT can be customized and extended without downtime.
+MIXINT is a free (as in freedom) server and web application allowing owners, groups, and the world to publish and subscribe to each other's file directories. Calendar events, chat messages, RSS subscriptions, and documents are organized in plain text formats on a shared file system controlled by you (or your friendly neighborhood sysdamin). JSON and markdown files can be presented by custom elements or linked to directly. The stylesheets and source code to any component of the workspace is only a few clicks away, so MIXINT can be customized and extended on-the-fly.
 
-Prospects:
+Features:
 - [Internet Connection Optional](#ico)
 - [No Assembly Required](#nar)
 - [Rearrangeable Message Threads](#rmt)
@@ -11,11 +11,6 @@ Prospects:
 - [Configurable Fingers and Footprints](#cff)
 - [Shallow Technology Stack](#sts)
 - [All You See is a Mirror](#asm)
-
-Roadmap:
-- [2018 Conceptualization](#2018)
-- [2019 Monitization](#2019)
-- [2020 Federalization](#2020)
 
 ## <a name="ico"></a>
 ## Internet Connection Optional
@@ -74,36 +69,11 @@ For example, the chatroom is not running any particular protocol or built on top
 
 ## <a name="asm"></a>
 ## All You See is a Mirror
-MIXINT has an archive-first policy. Articles and media fetches from RSS feeds are stored on disk, sharing links to images and video creates a backup for offline viewing.
+MIXINT has an archive-first policy. Articles and media fetched from RSS feeds are stored on disk, and sharing links to images and video creates a mirror for offline viewing that will remain even if the
 
-As feeds can be followed across domains, a server only has to serve its community and the other servers that follow your server - not everyone in the world that wants to view a video.
+As feeds can be followed across domains, a server only has to serve its community and the other servers that follow your server - files are mirrored across the machines that serve each community, so that no one server has to handle the traffic from the whole world.
 
-Why should the creator of a video get to "disable comments" ? Sure, if its their platform... but I'm somehow not allowed to copy the video, and also not allowed to comment on the page?
-
-## Roadmap
-
-### <a name="2018"></a>
-### 2018 Conceptualization
-
-Stabilizing naming conventions, component API, and initial style + Guides.
-
-The major blind spot for me is coming up with a strategy for package management, especially for sharing new web components. Maybe NPM can bootstrap this, but I want to investigate more git/IPFS/decentralized means to import new functionality.
-
-### <a name="2019"></a>
-### 2019 Monitization
-
-I'm keen to understand the integration of Keybase and Stellar: an identity authentication service and a pre-mined token that uses standard public key cryptography to make transactions without any proof-of-work burning a pound of coal.
-
-[Keybase](https://keybase.io) is quickly becoming the de facto platform for ensuring a file was created by its alleged author. This approaches the problem that I consider most insanity-inducing in the 21st century: the in-flight modification of audio, images, and streaming video. Deciding what sources we trust and having public key authentication become second nature is essential for understanding what's real in pulling information down from the cloud. I have it in mind to tie in openssl utilities to do this manually, but keybase has a fully-authenticated-file-system in production - it just needs its interface... remixed ;)
-
-[Stellar](https://stellar.org) is approaching a problem as old as the internet: can't we just divvy up a dollar between the 20 podcasts we're subscribed to? Can we create HTTP endpoints that demand a penny to serve the request? (Or how about a database export that demands a dollar for bandwidth?) Stellar may allow these micro-transactions where credit card processing fees and infrastruction proved prohibitive.
-
-### <a name="2020"></a>
-### 2020 Federalization
-
-Once basic functionality is implemented for a single machine, different strategies for load balancing, localization, and content discovery will be investigated. Built into proof-of-concept are components for following remote feeds via RSS or Git, and I expect this to facilitate distribution of media without too much load on individual servers, if participants in this project boot up their own servers to redistribute media to their own communities. But this is a risk, and how Diaspora* died: too much effort to set up a new node --> tragedy of the commons very quickly.
-
-However, it would be ideal if members of a community could contribute their storage to redundant backups and their bandwidth to additional capacity for serving strangers.
+Different servers can have different access rules. Maybe an artist doesn't want comments made on their server, but fan pages can have privately moderated discussions on the public video.
 
 ------
 
