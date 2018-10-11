@@ -9,6 +9,7 @@ New dependencies include:
 - ParsedMessage
 - ServerFailSoft
 - Transflect
+- extraStat
 - PathRead
 - PathWrite
 - PathFork
@@ -21,8 +22,8 @@ New dependencies include:
 
 New dependencies include:
 - ContextFeed
-- PipetteReader
-- PipetteWriter
+- BytePipette
+- WritePipette
 
 ## <a href="0.3.0"></a>
 ## 0.3.0

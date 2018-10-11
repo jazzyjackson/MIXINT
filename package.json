@@ -1,0 +1,32 @@
+{
+  "name": "@mixint/mixint",
+  "version": "0.1.0",
+  "description": "A Transparent Timeshare for Trusted Parties",
+  "main": "switchboard.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "@mixint/pathfork": "^1.0.1",
+    "@mixint/pathread": "^1.0.0",
+    "@mixint/pathunlink": "^1.0.0",
+    "@mixint/pathwrite": "^1.0.1",
+    "@mixint/transflect": "^0.4.0",
+    "parsedmessage": "^3.0.1",
+    "serverfailsoft": "^1.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mixint/mixint.git"
+  },
+  "author": "Colten Jackson",
+  "license": "SEE LICENSE IN CONTINUITY.LICENSE",
+  "bugs": {
+    "url": "https://github.com/mixint/mixint/issues"
+  },
+  "homepage": "https://github.com/mixint/mixint#readme"
+}
